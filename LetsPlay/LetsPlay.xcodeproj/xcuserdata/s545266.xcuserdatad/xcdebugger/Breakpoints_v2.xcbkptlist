@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "EF1F5B71-0756-4E41-98C4-E5A9A724720A"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9D3D5E67-211F-45A9-8BA4-59EB2B052E5E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LetsPlay/BookingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "BookingViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "9D3D5E67-211F-45A9-8BA4-59EB2B052E5E - 451bfa4e9151460e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LetsPlay.BookingViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; LetsPlay.BookingViewController"
+                  moduleName = "LetsPlay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/s545266/Downloads/LetsPlay/LetsPlay/BookingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "31">
+               </Location>
+               <Location
+                  uuid = "9D3D5E67-211F-45A9-8BA4-59EB2B052E5E - 602e9c78c755f20d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LetsPlay.BookingViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; LetsPlay.BookingViewController"
+                  moduleName = "LetsPlay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/s545266/Downloads/LetsPlay/LetsPlay/BookingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "151">
+               </Location>
+               <Location
+                  uuid = "9D3D5E67-211F-45A9-8BA4-59EB2B052E5E - d7c29e9698633c57"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LetsPlay.BookingViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;LetsPlay.BookingViewController&gt;"
+                  moduleName = "LetsPlay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/s545266/Downloads/LetsPlay/LetsPlay/BookingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  uuid = "9D3D5E67-211F-45A9-8BA4-59EB2B052E5E - 44afd477464e506"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LetsPlay.BookingViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;LetsPlay.BookingViewController&gt;"
+                  moduleName = "LetsPlay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/s545266/Downloads/LetsPlay/LetsPlay/BookingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "9D3D5E67-211F-45A9-8BA4-59EB2B052E5E - 47aa85b256f6263b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LetsPlay.BookingViewController.__deallocating_deinit"
+                  moduleName = "LetsPlay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/s545266/Downloads/LetsPlay/LetsPlay/BookingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
