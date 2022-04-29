@@ -16,7 +16,7 @@
 		15B5571627FFA56C00F177C0 /* TileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15B5571427FFA56C00F177C0 /* TileCollectionViewCell.xib */; };
 		15B5571827FFA5F900F177C0 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B5571727FFA5F900F177C0 /* DashboardViewController.swift */; };
 		15B5571A27FFAEE100F177C0 /* VenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B5571927FFAEE100F177C0 /* VenueViewController.swift */; };
-		15B5571C27FFBA2600F177C0 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B5571B27FFBA2600F177C0 /* DetailCollectionViewCell.swift */; };
+		19648F61281C86DA00AAAAA1 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19648F60281C86DA00AAAAA1 /* DetailCollectionViewCell.swift */; };
 		FAF1844127FBD75700F28ABB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1844027FBD75700F28ABB /* AppDelegate.swift */; };
 		FAF1844327FBD75700F28ABB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1844227FBD75700F28ABB /* SceneDelegate.swift */; };
 		FAF1844527FBD75700F28ABB /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1844427FBD75700F28ABB /* loginViewController.swift */; };
@@ -56,7 +56,7 @@
 		15B5571427FFA56C00F177C0 /* TileCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TileCollectionViewCell.xib; sourceTree = "<group>"; };
 		15B5571727FFA5F900F177C0 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		15B5571927FFAEE100F177C0 /* VenueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueViewController.swift; sourceTree = "<group>"; };
-		15B5571B27FFBA2600F177C0 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		19648F60281C86DA00AAAAA1 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAF1843D27FBD75700F28ABB /* LetsPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF1844027FBD75700F28ABB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF1844227FBD75700F28ABB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,11 +135,11 @@
 				15B5571327FFA56C00F177C0 /* TileCollectionViewCell.swift */,
 				15B5571427FFA56C00F177C0 /* TileCollectionViewCell.xib */,
 				15B5571727FFA5F900F177C0 /* DashboardViewController.swift */,
-				15B5571B27FFBA2600F177C0 /* DetailCollectionViewCell.swift */,
 				15984E5227FFC3CF004714A3 /* BookingViewController.swift */,
 				15984E5827FFC6FF004714A3 /* TimingCollectionViewCell.swift */,
 				15984E5927FFC6FF004714A3 /* TimingCollectionViewCell.xib */,
 				15984E5C27FFD48D004714A3 /* OffersViewController.swift */,
+				19648F60281C86DA00AAAAA1 /* DetailCollectionViewCell.swift */,
 			);
 			path = LetsPlay;
 			sourceTree = "<group>";
@@ -307,12 +307,12 @@
 				15984E5F27FFDA8E004714A3 /* ConfirmViewController.swift in Sources */,
 				15B5571827FFA5F900F177C0 /* DashboardViewController.swift in Sources */,
 				15984E5A27FFC6FF004714A3 /* TimingCollectionViewCell.swift in Sources */,
-				15B5571C27FFBA2600F177C0 /* DetailCollectionViewCell.swift in Sources */,
 				15B5571527FFA56C00F177C0 /* TileCollectionViewCell.swift in Sources */,
 				FAF1844127FBD75700F28ABB /* AppDelegate.swift in Sources */,
 				FAF1844327FBD75700F28ABB /* SceneDelegate.swift in Sources */,
 				FAF1847827FBF12400F28ABB /* registerViewController.swift in Sources */,
 				15984E5D27FFD48D004714A3 /* OffersViewController.swift in Sources */,
+				19648F61281C86DA00AAAAA1 /* DetailCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

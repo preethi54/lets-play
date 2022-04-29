@@ -2,12 +2,18 @@
 //  DetailCollectionViewCell.swift
 //  LetsPlay
 //
-//  Created by Mallampati,Sreebharath on 4/7/22.
+//  Created by Jadhav,Preethi Eshwarlal on 4/29/22.
 //
 
 import UIKit
 
 class DetailCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var imgOutlet: UIImageView!
     
+    @IBOutlet weak var imageOutlet: UIImageView!
+    
+    public func configure(with image: UIImage){
+        imageOutlet.image = image;
+    }
+    
+
 }
