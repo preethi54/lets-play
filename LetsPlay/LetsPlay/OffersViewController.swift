@@ -48,6 +48,7 @@ class OffersViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
               // Do any additional setup after loading the view.
               
+        self.title = "Offers!!"
             tableViewOutlet.delegate = self
             tableViewOutlet.dataSource = self
             tableViewOutlet.rowHeight = 100.0

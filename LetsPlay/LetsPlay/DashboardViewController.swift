@@ -29,29 +29,37 @@ var img = ""
 }
 
 
-
-
-class DashboardViewController: UIViewController {
-    @IBOutlet weak var offersImageViewOutlet: UIImageView!
+class DashboardViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource  {
     
+    let offerImageArray = [ "OF1",
+                       "OF2",
+                       "OF3",
+                       "OF4",
+                       "OF5"]
+    
+
+    
+    @IBOutlet weak var offersCollectionView: UICollectionView!
     @IBOutlet weak var collectionViewOutlet: UICollectionView!
     var productsArray = [Ground]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        offersImageViewOutlet.image = UIImage(named: "comingsoon")
+        offersCollectionView.delegate = self;
+        offersCollectionView.dataSource = self;
         
         
-        
-        collectionViewOutlet.register(TileCollectionViewCell.nib(), forCellWithReuseIdentifier: "TileCollectionViewCell")
+//        collectionViewOutlet.register(TileCollectionViewCell.nib(), forCellWithReuseIdentifier: "TileCollectionViewCell")
         
 //        collectionViewOutlet.register(ButtonCollectionViewCell.nib(), forCellWithReuseIdentifier: "ButtonCollectionViewCell")
         collectionViewOutlet.delegate = self
         collectionViewOutlet.dataSource = self
         collectionViewOutlet.backgroundColor = UIColor.clear.withAlphaComponent(0)
-        let layout = UICollectionViewFlowLayout();
-//        layout.itemSize = CGSize(width: 100, height: 100);
-        collectionViewOutlet.collectionViewLayout = layout;
+//        let layout = UICollectionViewFlowLayout();
+////        layout.itemSize = CGSize(width: 100, height: 100);
+//        collectionViewOutlet.collectionViewLayout = layout;
         productsArray  = [Ground(name: "Ground1", path: "", price: 34.7, latitude: "", longitude: "", timings: "9AM-5PM", img: "badminton"),
         Ground(name: "Ground2", path: "", price: 45.2, latitude: "", longitude: "", timings: "10AM-6PM", img: "BasketBall"),
         Ground(name: "Ground3", path: "", price: 40.50, latitude: "", longitude: "", timings: "5AM-11AM & 4PM-6PM", img: "Cricket"),
@@ -72,56 +80,62 @@ class DashboardViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+   
+        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+            if(collectionView == offersCollectionView ){
+               
+                return offerImageArray.count;
 
-    /*
-    // MARK: - Navigation
+            }
+            //else if(collectionView == collectionView){
+                return productsArray.count;
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+           // }
+        }
+        
+        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+           // if(collectionView == offersCollectionView ){
 
-}
+           //}else
+            if(collectionView == collectionViewOutlet){
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dashboardCell", for: indexPath) as! TileCollectionViewCell;
+                
+        //        let btnCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ButtonCollectionViewCell", for: indexPath) as! ButtonCollectionViewCell;
+                
+                cell.configure(with: UIImage(named: productsArray[indexPath.row].img)!);
+        //        btnCell.configure(with: productsArray[indexPath.row].name);
+        //        btnCell.buttonOutlet.tag = indexPath.row
+               
+        //        cell.addSubview(editButton)
+                return cell;
+            }
+            let cell = offersCollectionView.dequeueReusableCell(withReuseIdentifier: "offersCell", for: indexPath) as! OffersCollectionViewCell
+            
+            cell.configure(with: UIImage(named: offerImageArray[indexPath.row])!);
+            
+            return cell
 
+        }
 
-extension DashboardViewController: UICollectionViewDelegate{
-    
-    var secondViewController: VenueViewController {
-        let st = UIStoryboard(name: "Main", bundle: nil)
-        let vc = st.instantiateViewController(withIdentifier: "VenueViewController") as! VenueViewController
-        return vc
-    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
-        
-        let st = UIStoryboard(name: "Main", bundle: nil)
-        let vc = st.instantiateViewController(withIdentifier: "VenueViewController") as! VenueViewController
-        self.navigationController?.pushViewController(vc, animated: true);
-    }
-     
-}
-extension DashboardViewController : UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return productsArray.count;
+        if(collectionView == collectionViewOutlet){
+
+        }
+
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TileCollectionViewCell", for: indexPath) as! TileCollectionViewCell;
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let transition = segue.identifier
         
-//        let btnCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ButtonCollectionViewCell", for: indexPath) as! ButtonCollectionViewCell;
-        
-        cell.configure(with: UIImage(named: productsArray[indexPath.row].img)!);
-//        btnCell.configure(with: productsArray[indexPath.row].name);
-//        btnCell.buttonOutlet.tag = indexPath.row
-       
-//        cell.addSubview(editButton)
-        return cell;
+        if(transition == "showBookingSegue"){
+            let destination = segue.destination as! ShowBookingsViewController
+            
+           // destination.bookingData = Booking([])
+            
+        }
     }
+
+
 }
-extension DashboardViewController: UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 75, height: 75);
-    }
-}
+
+

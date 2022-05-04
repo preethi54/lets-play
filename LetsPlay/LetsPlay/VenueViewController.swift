@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class VenueViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imgArray.count;
     }
@@ -20,7 +23,16 @@ class VenueViewController: UIViewController, UICollectionViewDelegate, UICollect
         return cell
     }
     
+    func navigateToMap(){
+        let coordinate = CLLocationCoordinate2DMake(40.3589785,-94.883186)
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+        mapItem.name = "Target location"
+        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+    }
 
+    @IBAction func navigateToLoaction(_ sender: Any) {
+        navigateToMap();
+    }
     
     @IBOutlet weak var collectionView: UICollectionView!
     let imgArray = [ "b1",
@@ -36,6 +48,7 @@ class VenueViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         collectionView.delegate = self;
         collectionView.dataSource = self;
+        self.title = "PlayGround Details"
     }
     
 

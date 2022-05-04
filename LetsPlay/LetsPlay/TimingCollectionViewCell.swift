@@ -12,16 +12,29 @@ class TimingCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var buttonOutlet: UIButton!
 
     override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
     }
     
     public func setButtonTitle(_ title: String) -> Void {
         buttonOutlet.setTitle(title, for: .normal)
     }
     
-    public static func nib() ->  UINib{
-        return UINib(nibName: "TimingCollectionViewCell", bundle:nil)
+    public func setButtonSelected() ->Void{
+     if buttonOutlet.isEnabled{
+        buttonOutlet.backgroundColor = UIColor.systemGreen
+        buttonOutlet.setTitleColor(UIColor.white, for: .normal)
+        }
+    }
+    
+    public func adjustButtonSize()->Void{
+        buttonOutlet.layer.cornerRadius = 5
+        buttonOutlet.backgroundColor = UIColor.systemBlue
+        buttonOutlet.setTitleColor(UIColor.white, for: .normal)
     }
 
+    
+    public func disableButton() -> Void{
+        buttonOutlet.isEnabled = false;
+        buttonOutlet.backgroundColor = UIColor.systemGray
+        buttonOutlet.setTitleColor(UIColor.white, for: .normal)
+    }
 }
