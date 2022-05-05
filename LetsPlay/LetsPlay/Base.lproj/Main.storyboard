@@ -93,10 +93,10 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="112.5"/>
         </scene>
-        <!--Show Bookings View Controller-->
+        <!--Show All Bookings View Controller-->
         <scene sceneID="VsH-UW-16V">
             <objects>
-                <viewController storyboardIdentifier="ShowBookingsViewControllerID" id="7Lc-vA-l0o" customClass="ShowBookingsViewController" customModule="LetsPlay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowAllBookingsViewControllerID" id="7Lc-vA-l0o" customClass="ShowAllBookingsViewController" customModule="LetsPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9uy-TQ-WRo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,7 +130,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="NHO-9V-X7z"/>
                     <connections>
-                        <outlet property="bookingInfoTable" destination="lvd-Rt-suC" id="rl6-L2-oFg"/>
+                        <outlet property="bookingInfoTable" destination="lvd-Rt-suC" id="wc6-dh-oaH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGC-bg-9RE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

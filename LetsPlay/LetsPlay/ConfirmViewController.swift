@@ -45,7 +45,7 @@ class ConfirmViewController: UIViewController {
     
     @IBAction func navigateToBookings(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let objSomeViewController = storyBoard.instantiateViewController(withIdentifier: "ShowBookingsViewControllerID") as! ShowBookingsViewController
+        let objSomeViewController = storyBoard.instantiateViewController(withIdentifier: "ShowAllBookingsViewControllerID") as! ShowAllBookingsViewController
         self.navigationController?.pushViewController(objSomeViewController, animated: true)
     }
     
