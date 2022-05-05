@@ -11,7 +11,7 @@ class VenuImageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageViewInfoOutlet: UIImageView!
     
-    public func configure(with image: UIImage){
-        imageViewInfoOutlet.image = image;
+    public func configure(image: UIImage?){
+        imageViewInfoOutlet.image = image ?? UIImage(named: "b2");
     }
 }

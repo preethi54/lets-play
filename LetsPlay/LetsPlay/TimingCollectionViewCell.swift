@@ -11,6 +11,7 @@ class TimingCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var buttonOutlet: UIButton!
 
+    var index : Int?
     override func awakeFromNib() {
     }
     
@@ -34,7 +35,7 @@ class TimingCollectionViewCell: UICollectionViewCell {
     
     public func disableButton() -> Void{
         buttonOutlet.isEnabled = false;
-        buttonOutlet.backgroundColor = UIColor.systemGray
-        buttonOutlet.setTitleColor(UIColor.white, for: .normal)
+        buttonOutlet.backgroundColor = UIColor.lightGray
+        buttonOutlet.setTitleColor(UIColor.black, for: .normal)
     }
 }

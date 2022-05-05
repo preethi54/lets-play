@@ -16,5 +16,5 @@ struct User{
     var userPhone:String
 }
 
-var users: [User] = [User(userId: "dees", userName: "Test", userEmail: "test@test.com", userPassword: "password", userPhone: "989898989")];
+var users: [User] = [User(userId: "dees", userName: "admin", userEmail: "test@test.com", userPassword: "password", userPhone: "989898989")];
 var currentLoggedInUser: String = "";

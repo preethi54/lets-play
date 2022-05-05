@@ -10,6 +10,7 @@
 		152302922821E29200448E5C /* VenuImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152302912821E29200448E5C /* VenuImageCollectionViewCell.swift */; };
 		15312099281F3A6B00E577CA /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15312098281F3A6B00E577CA /* UserDetails.swift */; };
 		158AFE7F28205A23007A3A50 /* BookingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158AFE7E28205A23007A3A50 /* BookingsData.swift */; };
+		1593812828234AE800E12DA1 /* ShowBookingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1593812728234AE700E12DA1 /* ShowBookingsViewController.swift */; };
 		15984E5327FFC3CF004714A3 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15984E5227FFC3CF004714A3 /* BookingViewController.swift */; };
 		15984E5A27FFC6FF004714A3 /* TimingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15984E5827FFC6FF004714A3 /* TimingCollectionViewCell.swift */; };
 		15984E5D27FFD48D004714A3 /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15984E5C27FFD48D004714A3 /* OffersViewController.swift */; };
@@ -17,7 +18,6 @@
 		15B5571527FFA56C00F177C0 /* TileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B5571327FFA56C00F177C0 /* TileCollectionViewCell.swift */; };
 		15B5571827FFA5F900F177C0 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B5571727FFA5F900F177C0 /* DashboardViewController.swift */; };
 		15B5571A27FFAEE100F177C0 /* VenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B5571927FFAEE100F177C0 /* VenueViewController.swift */; };
-		1953D5E5282210DB00B0EF88 /* ShowBookingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1953D5E4282210DB00B0EF88 /* ShowBookingsViewController.swift */; };
 		19648F61281C86DA00AAAAA1 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19648F60281C86DA00AAAAA1 /* DetailCollectionViewCell.swift */; };
 		19648F66281C94D100AAAAA1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 19648F65281C94D100AAAAA1 /* FirebaseAnalytics */; };
 		19648F68281C94D100AAAAA1 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 19648F67281C94D100AAAAA1 /* FirebaseDatabase */; };
@@ -56,6 +56,7 @@
 		152302912821E29200448E5C /* VenuImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		15312098281F3A6B00E577CA /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
 		158AFE7E28205A23007A3A50 /* BookingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingsData.swift; sourceTree = "<group>"; };
+		1593812728234AE700E12DA1 /* ShowBookingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowBookingsViewController.swift; path = "../../lets-play-main/LetsPlay/LetsPlay/ShowBookingsViewController.swift"; sourceTree = "<group>"; };
 		15984E5227FFC3CF004714A3 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		15984E5827FFC6FF004714A3 /* TimingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimingCollectionViewCell.swift; sourceTree = "<group>"; };
 		15984E5C27FFD48D004714A3 /* OffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		15B5571327FFA56C00F177C0 /* TileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCollectionViewCell.swift; sourceTree = "<group>"; };
 		15B5571727FFA5F900F177C0 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		15B5571927FFAEE100F177C0 /* VenueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueViewController.swift; sourceTree = "<group>"; };
-		1953D5E4282210DB00B0EF88 /* ShowBookingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBookingsViewController.swift; sourceTree = "<group>"; };
 		19648F60281C86DA00AAAAA1 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		19648F69281C9D9300AAAAA1 /* Playgrounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playgrounds.swift; sourceTree = "<group>"; };
 		19648F6B281CAAA700AAAAA1 /* OffersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -149,12 +149,12 @@
 				15984E5827FFC6FF004714A3 /* TimingCollectionViewCell.swift */,
 				15984E5C27FFD48D004714A3 /* OffersViewController.swift */,
 				19648F60281C86DA00AAAAA1 /* DetailCollectionViewCell.swift */,
+				1593812728234AE700E12DA1 /* ShowBookingsViewController.swift */,
 				19648F69281C9D9300AAAAA1 /* Playgrounds.swift */,
 				19648F6B281CAAA700AAAAA1 /* OffersCollectionViewCell.swift */,
 				15312098281F3A6B00E577CA /* UserDetails.swift */,
 				158AFE7E28205A23007A3A50 /* BookingsData.swift */,
 				152302912821E29200448E5C /* VenuImageCollectionViewCell.swift */,
-				1953D5E4282210DB00B0EF88 /* ShowBookingsViewController.swift */,
 			);
 			path = LetsPlay;
 			sourceTree = "<group>";
@@ -316,7 +316,7 @@
 			files = (
 				15B5571A27FFAEE100F177C0 /* VenueViewController.swift in Sources */,
 				19648F6A281C9D9300AAAAA1 /* Playgrounds.swift in Sources */,
-				1953D5E5282210DB00B0EF88 /* ShowBookingsViewController.swift in Sources */,
+				1593812828234AE800E12DA1 /* ShowBookingsViewController.swift in Sources */,
 				15984E5327FFC3CF004714A3 /* BookingViewController.swift in Sources */,
 				158AFE7F28205A23007A3A50 /* BookingsData.swift in Sources */,
 				FAF1844527FBD75700F28ABB /* LoginViewController.swift in Sources */,

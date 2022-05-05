@@ -14,7 +14,7 @@ class Ground  {
     var latitude = ""
     var longitude = ""
     var timings = ""
-var img = ""
+    var img = ""
     
     init(name : String,path :String ,price : Double,latitude :String,longitude : String,timings: String, img:String){
         self.name = name;
@@ -39,8 +39,13 @@ class DashboardViewController: UIViewController,UICollectionViewDelegate, UIColl
     
 
     
+
+    @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var offersCollectionView: UICollectionView!
     @IBOutlet weak var collectionViewOutlet: UICollectionView!
+    @IBOutlet weak var proLevelOutlet: UILabel!
+    @IBOutlet weak var showBookingButton: UIButton!
+    
     var productsArray = [Ground]()
     
     
@@ -49,64 +54,59 @@ class DashboardViewController: UIViewController,UICollectionViewDelegate, UIColl
         
         offersCollectionView.delegate = self;
         offersCollectionView.dataSource = self;
-        
-        
-//        collectionViewOutlet.register(TileCollectionViewCell.nib(), forCellWithReuseIdentifier: "TileCollectionViewCell")
-        
-//        collectionViewOutlet.register(ButtonCollectionViewCell.nib(), forCellWithReuseIdentifier: "ButtonCollectionViewCell")
+ 
         collectionViewOutlet.delegate = self
         collectionViewOutlet.dataSource = self
         collectionViewOutlet.backgroundColor = UIColor.clear.withAlphaComponent(0)
-//        let layout = UICollectionViewFlowLayout();
-////        layout.itemSize = CGSize(width: 100, height: 100);
-//        collectionViewOutlet.collectionViewLayout = layout;
-        productsArray  = [Ground(name: "Ground1", path: "", price: 34.7, latitude: "", longitude: "", timings: "9AM-5PM", img: "badminton"),
-        Ground(name: "Ground2", path: "", price: 45.2, latitude: "", longitude: "", timings: "10AM-6PM", img: "BasketBall"),
-        Ground(name: "Ground3", path: "", price: 40.50, latitude: "", longitude: "", timings: "5AM-11AM & 4PM-6PM", img: "Cricket"),
-        Ground(name: "Ground3", path: "", price: 40.50, latitude: "", longitude: "", timings: "5AM-11AM & 4PM-6PM", img:"FootBall"),
-        Ground(name: "Ground2", path: "", price: 45.2, latitude: "", longitude: "", timings: "10AM-6PM", img:"Golf"),
-        Ground(name: "Ground3", path: "", price: 40.50, latitude: "", longitude: "", timings: "5AM-11AM & 4PM-6PM", img: "Soccer"),
-        Ground(name: "Ground3", path: "", price: 40.50, latitude: "", longitude: "", timings: "5AM-11AM & 4PM-6PM", img:"Squash"),
-        Ground(name: "Ground3", path: "", price: 40.50, latitude: "", longitude: "", timings: "5AM-11AM & 4PM-6PM", img:"Swimming"),
-        Ground(name: "Ground3", path: "", price: 40.50, latitude: "", longitude: "", timings: "5AM-11AM & 4PM-6PM", img:"Swimming"),
-        Ground(name: "Ground3", path: "", price: 40.50, latitude: "", longitude: "", timings: "5AM-11AM & 4PM-6PM", img:"TableTennis"),
-        Ground(name: "Ground3", path: "", price: 40.50, latitude: "", longitude: "", timings: "5AM-11AM & 4PM-6PM", img:"Tennis"),
-        Ground(name: "Ground3", path: "", price: 40.50, latitude: "", longitude: "", timings: "5AM-11AM & 4PM-6PM", img:"volleyball"),
-        Ground(name: "Ground2", path: "", price: 45.2, latitude: "", longitude: "", timings: "10AM-6PM", img:"Golf"),
-        Ground(name: "Ground3", path: "", price: 40.50, latitude: "", longitude: "", timings: "5AM-11AM & 4PM-6PM", img: "Soccer"),
-        Ground(name: "Ground3", path: "", price: 40.50, latitude: "", longitude: "", timings: "5AM-11AM & 4PM-6PM", img:"Squash")
-
-        ]
-        // Do any additional setup after loading the view.
+        self.navigationItem.setHidesBackButton(true, animated: true);
+        self.navigationController?.navigationBar.isHidden = true
+        userName.text = "Hi!! \(users.filter{$0.userId == currentLoggedInUser}[0].userName)"
+        let bookingCounts = getBookingCount(userId: currentLoggedInUser)
+        showBookingButton.setTitle("\(bookingCounts) Booking\(bookingCounts == 0 ? "" : "s")", for: .normal)
+        
+        if(bookingCounts > 4){
+            proLevelOutlet.text = "Pro Member"
+        }
+        else if (bookingCounts > 3){
+            proLevelOutlet.text = "Intermediate"
+        }
+        else{
+            proLevelOutlet.text = "Beginner"
+        }
+        
     }
     
+    
+    func getBookingCount(userId:String) -> Int {
+        if(bookingData.count == 0){
+            return 0;
+        }
+        else{
+            return bookingData.filter{$0.userId == userId}.count;
+        }
+        return 0;
+    }
    
-        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    @IBAction func logoutButtonClicked(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        self.navigationController?.navigationBar.isHidden = true
+        let objSomeViewController = storyBoard.instantiateViewController(withIdentifier: "loginViewControllerID") as! loginViewController
+        self.navigationController?.pushViewController(objSomeViewController, animated: true)
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             if(collectionView == offersCollectionView ){
                
                 return offerImageArray.count;
 
             }
-            //else if(collectionView == collectionView){
-                return productsArray.count;
-
-           // }
+                return data1.count;
         }
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-           // if(collectionView == offersCollectionView ){
 
-           //}else
             if(collectionView == collectionViewOutlet){
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dashboardCell", for: indexPath) as! TileCollectionViewCell;
-                
-        //        let btnCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ButtonCollectionViewCell", for: indexPath) as! ButtonCollectionViewCell;
-                
-                cell.configure(with: UIImage(named: productsArray[indexPath.row].img)!);
-        //        btnCell.configure(with: productsArray[indexPath.row].name);
-        //        btnCell.buttonOutlet.tag = indexPath.row
-               
-        //        cell.addSubview(editButton)
+                cell.configure(image: UIImage(named: data1[indexPath.row].playgroundIcon) ?? UIImage(named: "b1")!);
                 return cell;
             }
             let cell = offersCollectionView.dequeueReusableCell(withReuseIdentifier: "offersCell", for: indexPath) as! OffersCollectionViewCell
@@ -116,22 +116,51 @@ class DashboardViewController: UIViewController,UICollectionViewDelegate, UIColl
             return cell
 
         }
-
+    var selectedCell :Int? = nil
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if(collectionView == collectionViewOutlet){
-
+            if(collectionView == collectionViewOutlet){
+                selectedCell = indexPath.row;
+               // self.performSegue(withIdentifier: "venueInfoSegue", sender: data1[indexPath.row])
+        
+            }
+        else{
+            return;
         }
 
     }
+  
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if self.isMovingFromParent {
+            userName.text = "Hi!! \(users.filter{$0.userId == currentLoggedInUser}[0].userName)"
+            let bookingCounts = getBookingCount(userId: currentLoggedInUser)
+            showBookingButton.setTitle("\(bookingCounts) Booking\(bookingCounts == 0 ? "" : "s")", for: .normal)
+            
+            if(bookingCounts > 4){
+                proLevelOutlet.text = "Pro Member"
+            }
+            else if (bookingCounts > 3){
+                proLevelOutlet.text = "Intermediate"
+            }
+            else{
+                proLevelOutlet.text = "Beginner"
+            }
+        }
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("hit")
         let transition = segue.identifier
-        
-        if(transition == "showBookingSegue"){
-            let destination = segue.destination as! ShowBookingsViewController
-            
-           // destination.bookingData = Booking([])
-            
+        if transition == "venueInfoSegue"{
+            if let destination = segue.destination as? VenueViewController {
+                if let paths = collectionViewOutlet?.indexPathsForSelectedItems {
+                    let row = paths[0].row
+                    print(data1[row])
+                    destination.venueInfo = data1[row]
+                }
+            }
         }
     }
 

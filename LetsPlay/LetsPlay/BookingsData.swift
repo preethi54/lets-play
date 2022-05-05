@@ -15,6 +15,8 @@ struct Booking{
     var bookingTime:String
     var bookingVenue:String
     var bookingCategory:String
+    var playersNumber:String
+    var address:String
     
 }
 var bookingData : [Booking] = []

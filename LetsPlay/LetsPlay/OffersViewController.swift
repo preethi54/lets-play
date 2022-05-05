@@ -47,6 +47,9 @@ class OffersViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
               // Do any additional setup after loading the view.
+        
+        self.navigationController?.navigationBar.isHidden = false
+
               
         self.title = "Offers!!"
             tableViewOutlet.delegate = self
@@ -55,10 +58,10 @@ class OffersViewController: UIViewController, UITableViewDelegate, UITableViewDa
             tableViewOutlet.backgroundColor = UIColor.clear.withAlphaComponent(0)
 //        tableViewOutlet.rowHeight = UITableView.automaticDimension
               
-                let offer1 = Offer(OfferDescription: "Get 50% off on using HDFC Credit card")
+                let offer1 = Offer(OfferDescription: "Get 50% off on using Credit card")
                 OffersArray.append(offer1)
               
-                let offer2 = Offer(OfferDescription: "Get 100% off on your first booking")
+                let offer2 = Offer(OfferDescription: "Get 10% off on your first booking")
                 OffersArray.append(offer2)
             
                 let offer3 = Offer(OfferDescription: "Earn a $10 cash rewards bonus after spending $100 on bookings in the first 3 months")
@@ -73,7 +76,7 @@ class OffersViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let offer6 = Offer(OfferDescription: "Get $2 off on every booking ")
                 OffersArray.append(offer6)
         
-                let offer7 = Offer(OfferDescription: "Get 20% off on booking Cricket Ground using ICICI Credi Card")
+                let offer7 = Offer(OfferDescription: "Get 20% off on booking Cricket Ground using Visa Credit Card")
                 OffersArray.append(offer7)
     }
     

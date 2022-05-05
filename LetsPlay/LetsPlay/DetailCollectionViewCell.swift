@@ -11,8 +11,8 @@ class DetailCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageOutlet: UIImageView!
     
-    public func configure(with image: UIImage){
-        imageOutlet.image = image;
+    public func configure(image: UIImage?){
+        imageOutlet.image = image ?? UIImage(named:"b1");
     }
     
 

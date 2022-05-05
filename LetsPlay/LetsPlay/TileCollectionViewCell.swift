@@ -11,7 +11,7 @@ class TileCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imageViewOutlet: UIImageView!
 
-    public func configure(with image: UIImage){
+    public func configure(image: UIImage){
         imageViewOutlet.image = image;
         imageViewOutlet.layer.cornerRadius = 15
     }

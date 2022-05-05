@@ -17,10 +17,16 @@ class loginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageLogo.image = UIImage(named: "logo-letsplay")
+        imageLogo.image = UIImage(named: "logo-letsplay");
+      
         // Do any additional setup after loading the view.
     }
     
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        userNameOutlet.text = "";
+        passwordOutlet.text = "";
+    }
     
     func showAlert(title: String, message:String, isAction: Bool){
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

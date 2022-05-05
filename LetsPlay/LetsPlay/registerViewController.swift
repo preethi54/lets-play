@@ -19,7 +19,7 @@ class registerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.navigationBar.isHidden = false
         // Do any additional setup after loading the view.
     }
     
@@ -30,7 +30,7 @@ class registerViewController: UIViewController {
                 (action: UIAlertAction!) in
             }
             alertController.addAction(OKAction)
-        DispatchQueue.main.async(execute: {
+         DispatchQueue.main.async(execute: {
                   self.present(alertController, animated: true)
               })
 
@@ -69,12 +69,33 @@ class registerViewController: UIViewController {
                 showAlert(title: "Password Mis-match", message: "Confirm Password and Password didn't match", isAction: true);
                 return;
             }
+        else if(users.filter{$0.userName == userNameOutlet.text}.count > 0){
+            showAlert(title: "Exists", message: "User already Exists", isAction: true);
+            return;
+        }
+        else{
             let userId : String = randomNameString(length: 4);
             let userDetails: User = User(
                 userId: userId, userName: userNameOutlet.text!, userEmail: emailOutlet.text!, userPassword: passwordOutlet.text!, userPhone: phoneOutlet.text!);
-            showAlert(title: "Successfully Registered", message: "User Registered Successfully", isAction: false);
+//            showAlert(title: "Successfully Registered", message: "User Registered Successfully", isAction: true);
             users.append(userDetails);
-            self.navigationController?.popViewController(animated: true)
+            
+            let alertController = UIAlertController(title: "Successfully Registered", message: "User Registered Successfully", preferredStyle: .alert)
+           
+                let OKAction = UIAlertAction(title: "OK", style: .default) {
+                    (action: UIAlertAction!) in
+                    self.navigationController?.popViewController(animated: true)
+                }
+                alertController.addAction(OKAction)
+             DispatchQueue.main.async(execute: {
+                    self.present(alertController, animated: true)
+                   
+                  })
+            
+           
+        }
+            
+           
     }
     
     
